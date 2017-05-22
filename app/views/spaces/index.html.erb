@@ -1,3 +1,9 @@
-<%= @spaces.each do |space| %>
+<% @spaces.each do |space| %>
   <h2><%= space.name %></h2>
+  <p><%= space.address %></p>
+  <p><%= space.size %></p>
+  <p><%= space.rating %></p>
+  <%= link_to "See more details", space_path(space) %>
 <% end %>
+<%= link_to "Add Space", new_space_path %>
+<%= link_to "Return home", root_path %>
