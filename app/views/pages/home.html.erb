@@ -1,6 +1,59 @@
-<h1>Home</h1>
-<%= link_to "Log In", new_user_session_path %>
-<%= link_to destroy_user_session_path, :method => :delete do %>
-  <h1>Log Out</h1>
-<% end %>
-<p><%= link_to "See spaces", spaces_path %></p>
+<div class="banner">
+  <div class="banner-content text-center">
+  <%= image_tag "logo.png", class: "logo" %>
+    <h1>Find venues to curate your events!</h1>
+    <div class="searchBarWrapper"><!-- react-empty: 138 -->
+      <form class="flexbox" action="#">
+        <div class="searchContainer">
+          <div class="locationContainer" style="width:100%;">
+            <div class="containerLocationLabel">Where </div>
+              <div class="containerLocationSubtitle">
+                  <input type="text" class="locationInput" placeholder="Location">
+              </div>
+              <div class="Underline">
+            </div>
+          </div>
+        </div>
+        <div class="searchDateContainer">
+          <div class="dateContainer" style="width:100%;">
+            <div class="containerDateLabel">When</div>
+              <div class="container_datepicker">
+                <input type="date" placeholder="Dates" class="dateInput">
+              </div>
+            <div class="Underline"></div>
+          </div>
+        </div>
+        <div class="searchButtonContainer">
+          <div class="buttonContainer" style="width:100%;">
+            <button type="submit" class="btn btn-sm"">
+              <span>Search</span>
+            </button>
+            <div class="Underline"></div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<h2 class="text-center" id="phrase">How does it work ?</h2>
+
+<div class="container text-center padded features">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <%= image_tag "search.png", class: "icons" %>
+      <p>Find the best spot according to your needs.</p>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= image_tag "contact.png", class: "icons" %>
+      <p>Contact the owner and book the place for as long as you need.</p>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= image_tag "frame.png", class: "icons" %>
+      <p>Enjoy your professional exhibition!</p>
+    </div>
+  </div>
+</div>
+
+
+
