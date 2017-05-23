@@ -1,0 +1,126 @@
+.searchBarWrapper{
+  padding-top: 10px !important;
+  padding-bottom: 8px !important;
+  line-height: 24px !important;
+  letter-spacing: undefined !important;
+  border-radius: 4px !important;
+  border: 1px solid #DBDBDB !important;
+  box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.08) !important;
+  padding: 0px !important;
+  display: flex !important;
+  background-color:white;
+  text-align: initial;
+}
+.searchContainer{
+  display: table-cell !important;
+  vertical-align: middle !important;
+  position: relative !important;
+}
+
+.flexbox{
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+// WHERE CONTAINER____________________________
+
+.locationContainer{
+  font-size: 15px !important;
+  line-height: 18px !important;
+  letter-spacing: 0.2px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  color: #484848 !important;
+  display: block !important;
+  margin-left: 16px !important;
+  margin-top: 16px !important;
+}
+
+.containerLocationLabelTitle{
+  margin-top: -3px !important;
+  margin-left: 5px !important;
+}
+
+.containerLocationSubtitle{
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.Underline{
+  position: absolute !important;
+  left: 0px !important;
+  right: 0px !important;
+  bottom: 0px !important;
+  height: 2px !important;
+  background: #00A699 !important;
+  opacity: 0 !important;
+  z-index: 1 !important;
+}
+
+.locationInput{
+  font-size: 19px !important;
+  line-height: 24px !important;
+  letter-spacing: undefined !important;
+  padding-top: undefined !important;
+  padding-bottom: undefined !important;
+  color: #484848 !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: #ffffff !important;
+  border-radius: 2px !important;
+  background-color: #ffffff !important;
+  margin-bottom: 0px !important;
+  position: relative !important;
+  z-index: 0 !important;
+  margin-top: 10px !important;
+  margin-left: 5px !important;
+  display: block !important;
+  width: 82% !important;
+  outline: none;
+}
+
+// datecontainer_______________________________
+
+.dateContainer{
+
+  border-left: 1px solid #e4e4e4 !important;
+}
+
+.containerDateLabel{
+  font-size: 15px !important;
+  line-height: 18px !important;
+  letter-spacing: 0.2px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  color: #484848 !important;
+  display: block !important;
+  margin-left: 16px !important;
+  margin-top: 16px !important;
+}
+
+.dateInput{
+  border: none;
+  color: #767676;
+  font-size: 19px;
+  margin-top: 10px !important;
+  margin-left: 20px !important;
+  outline: none;
+}
+
+
+// buttoncontainer______________________________
+.searchButtonContainer{
+  display: inline-block;
+}
+
+.btn{
+  padding: 7px 19px;
+  margin-right: 20px;
+}
+
+
