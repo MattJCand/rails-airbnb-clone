@@ -22,11 +22,6 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to "#", class: 'become_curator' do %>
-                 <%= t(".profile", default: "Help") %>
-                <% end %>
-              </li>
-              <li>
                 <%= link_to destroy_user_session_path, method: :delete, class: 'become_curator' do %>
                   <%= t(".sign_out", default: "Log-Out") %>
                 <% end %>
