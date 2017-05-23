@@ -12,12 +12,12 @@
         <div class="navbar-wagon-item">
             <ul class="nav nav-pills pull-left">
               <li>
-                <%= link_to "#", class: 'become_curator' do %>
+                <%= link_to user_path(current_user), class: 'become_curator' do %>
                   <%= t(".profile", default: "Become a curator") %>
                 <% end %>
               </li>
               <li>
-                <%= link_to "#", class: 'become_curator' do %>
+                <%= link_to user_path(current_user), class: 'become_curator' do %>
                   <%= t(".profile", default: "My profile") %>
                 <% end %>
               </li>
@@ -35,7 +35,7 @@
         <div class="navbar-wagon-item">
             <ul class="nav nav-pills pull-left">
               <li>
-                <%= link_to "#", class: 'become_curator' do %>
+                <%= link_to new_user_session_path, class: 'become_curator' do %>
                   <%= t(".profile", default: "Become a curator") %>
                 <% end %>
               </li>
