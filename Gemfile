@@ -16,8 +16,11 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 
-#Add Device
+#Add Devise
 gem 'devise'
+
+#Add Omniauthable (for Facebook Connect)
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'binding_of_caller'
