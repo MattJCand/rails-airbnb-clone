@@ -14,6 +14,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
     @booking.space = Space.find(params[:space_id])
     @price = @booking.space.price_by_day
     @time = @booking.duration
