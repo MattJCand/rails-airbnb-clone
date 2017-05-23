@@ -16,7 +16,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 
-#Add Device
+#Add Devise
 gem 'devise'
 
 #Add Pictures
@@ -24,6 +24,9 @@ gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
+
+#Add Omniauthable (for Facebook Connect)
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'binding_of_caller'
