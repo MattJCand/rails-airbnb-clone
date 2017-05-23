@@ -1,1 +1,32 @@
 // Your footer style
+#footeur {
+  background-color: white;
+}
+
+.footer-content {
+    border-top: 1px solid black;
+}
+
+.flexbox {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  flex: 1 1 auto
+}
+
+.footer-list li {
+  display: inline-block;
+  padding: 15px 15px;
+}
+
+.logo-footer {
+  width: 5%;
+  height: 5%;
+  padding-right: 11px;
+}
+
+.copyright {
+  margin-right: 20px;
+  left: 6em;
+  position: absolute;
+}

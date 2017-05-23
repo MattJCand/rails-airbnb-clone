@@ -144,3 +144,17 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+.become_curator:hover {
+  font-weight: bold;
+  box-shadow: inset 0px 0 #000;
+  background-color: none;
+  border-bottom: 3px solid #000;
+}
+
+.nav-pills > li > a {
+    padding: 24px 10px;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background: none!important;
+}
