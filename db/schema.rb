@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170523142434) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -43,6 +44,18 @@ ActiveRecord::Schema.define(version: 20170523142434) do
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
 
+  create_table "details", force: :cascade do |t|
+    t.boolean  "nails"
+    t.boolean  "drill"
+    t.integer  "plugs"
+    t.integer  "windows"
+    t.integer  "wc"
+    t.integer  "space_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["space_id"], name: "index_details_on_space_id", using: :btree
+  end
+
   create_table "spaces", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
@@ -52,6 +65,11 @@ ActiveRecord::Schema.define(version: 20170523142434) do
     t.integer  "price_by_day"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.boolean  "nails"
+    t.boolean  "drill"
+    t.integer  "plugs"
+    t.integer  "windows"
+    t.integer  "wc"
     t.index ["user_id"], name: "index_spaces_on_user_id", using: :btree
   end
 
@@ -81,5 +99,6 @@ ActiveRecord::Schema.define(version: 20170523142434) do
 
   add_foreign_key "bookings", "spaces"
   add_foreign_key "bookings", "users"
+  add_foreign_key "details", "spaces"
   add_foreign_key "spaces", "users"
 end
