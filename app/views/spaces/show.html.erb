@@ -3,4 +3,7 @@
 <p><%= @space.address %></p>
 <p><%= @space.size %> m2</p>
 <p><%= @space.price_by_day %> €/jour</p>
+<% if @space.photo? %>
+  <%= cl_image_tag @space.photo.path, width: 200, height: 300, crop: :fill %>
+<% end %>
 <%= link_to "Back to spaces", spaces_path %>
