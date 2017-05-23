@@ -1,4 +1,6 @@
 class SpacesController < ApplicationController
+    skip_before_action :authenticate_user!, only: [ :index, :show ]
+
   def index
     @spaces = Space.all
   end
@@ -24,6 +26,6 @@ class SpacesController < ApplicationController
   private
 
   def space_params
-    params.require(:space).permit(:name, :address, :size, :price_by_day)
+    params.require(:space).permit(:name, :address, :size, :price_by_day, :photo, :wc, :nails, :drill, :plugs, :windows)
   end
 end

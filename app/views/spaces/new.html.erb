@@ -3,7 +3,12 @@
   <%= f.input :address %>
   <%= f.input :size %>
   <%= f.input :price_by_day %>
-
+  <%= f.input :nails %>
+  <%= f.input :drill %>
+  <%= f.input :plugs %>
+  <%= f.input :windows %>
+  <%= f.input :wc %>
+  <%= f.input :photo, as: :attachinary %>
   <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
 <p><%= link_to "Go back to spaces", spaces_path %></p>

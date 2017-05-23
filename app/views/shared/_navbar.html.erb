@@ -9,38 +9,47 @@
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
-
-      <!-- Profile picture and dropdown -->
         <div class="navbar-wagon-item">
             <ul class="nav nav-pills pull-left">
               <li>
-                <%= link_to "#" do %>
+                <%= link_to user_path(current_user), class: 'become_curator' do %>
                   <%= t(".profile", default: "Become a curator") %>
                 <% end %>
               </li>
               <li>
-                <%= link_to "#" do %>
-                  <%= t(".profile", default: "Sign up") %>
+                <%= link_to user_path(current_user), class: 'become_curator' do %>
+                  <%= t(".profile", default: "My profile") %>
                 <% end %>
               </li>
               <li>
-                <%= link_to "#" do %>
-                 <%= t(".profile", default: "Help") %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                  <%= t(".sign_out", default: "Log out") %>
+                <%= link_to destroy_user_session_path, method: :delete, class: 'become_curator' do %>
+                  <%= t(".sign_out", default: "Log-Out") %>
                 <% end %>
               </li>
             </ul>
           </div>
-          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle pull-right", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         </div>
     <% else %>
-
-      <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <div class="navbar-wagon-item">
+            <ul class="nav nav-pills pull-left">
+              <li>
+                <%= link_to new_user_session_path, class: 'become_curator' do %>
+                  <%= t(".profile", default: "Become a curator") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#", class: 'become_curator' do %>
+                  <%= t(".profile", default: "Sign up") %>
+                <% end %>
+              </li>
+              <li>
+                  <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: 'become_curator' %>
+              </li>
+            </ul>
+          </div>
+        </div>
 
     <% end %>
 
@@ -51,9 +60,10 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><a href="#">Become a curator</a></li>
+        <li><a href="#">Sign up</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">My profile</a></li>
       </ul>
     </div>
   </div>

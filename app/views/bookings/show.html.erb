@@ -1,0 +1,6 @@
+<h2>Congratulations ! </h2>
+<h3>You just booked <%= @booking.space.name %> for <%= @booking.duration %> days </h3>
+<p>From <%= @booking.start_day.strftime("%A %d %B") %> to <%= @booking.end_day.strftime("%A %d %B") %></p>
+<p>For <%= @booking.price %> €</p>
+<p><%= link_to "Back to spaces", spaces_path %></p>
+

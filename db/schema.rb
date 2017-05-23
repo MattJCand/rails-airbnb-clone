@@ -10,10 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170522152624) do
+ActiveRecord::Schema.define(version: 20170523142434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachinary_files", force: :cascade do |t|
+    t.string   "attachinariable_type"
+    t.integer  "attachinariable_id"
+    t.string   "scope"
+    t.string   "public_id"
+    t.string   "version"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "format"
+    t.string   "resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.date     "start_day"
+    t.integer  "duration"
+    t.integer  "price"
+    t.integer  "space_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date     "end_day"
+    t.index ["space_id"], name: "index_bookings_on_space_id", using: :btree
+    t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
+  end
+
+  create_table "details", force: :cascade do |t|
+    t.boolean  "nails"
+    t.boolean  "drill"
+    t.integer  "plugs"
+    t.integer  "windows"
+    t.integer  "wc"
+    t.integer  "space_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["space_id"], name: "index_details_on_space_id", using: :btree
+  end
 
   create_table "spaces", force: :cascade do |t|
     t.string   "name"
@@ -24,6 +64,11 @@ ActiveRecord::Schema.define(version: 20170522152624) do
     t.integer  "price_by_day"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.boolean  "nails"
+    t.boolean  "drill"
+    t.integer  "plugs"
+    t.integer  "windows"
+    t.integer  "wc"
     t.index ["user_id"], name: "index_spaces_on_user_id", using: :btree
   end
 
@@ -40,9 +85,19 @@ ActiveRecord::Schema.define(version: 20170522152624) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "facebook_picture_url"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "token"
+    t.datetime "token_expiry"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "bookings", "spaces"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "details", "spaces"
   add_foreign_key "spaces", "users"
 end
