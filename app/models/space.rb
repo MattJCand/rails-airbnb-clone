@@ -4,4 +4,5 @@ class Space < ApplicationRecord
 
   has_attachment :photo
   validates :photo, presence: true
+  validates :description, presence: true
 end
