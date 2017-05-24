@@ -3,4 +3,5 @@ class Space < ApplicationRecord
   has_many :bookings, dependent: :destroy
 
   has_attachment :photo
+  validates :photo, presence: true
 end
