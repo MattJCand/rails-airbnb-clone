@@ -1,6 +1,44 @@
-<h2>Congratulations ! </h2>
-<h3>You just booked <%= @booking.space.name %> for <%= @booking.duration %> days </h3>
-<p>From <%= @booking.start_day.strftime("%A %d %B") %> to <%= @booking.end_day.strftime("%A %d %B") %></p>
-<p>For <%= @booking.price %> €</p>
-<p><%= link_to "Back to spaces", spaces_path %></p>
+<div id="bannerBooked">
+  <div class="banner-content text-center">
+    <h2>Congratulations,<br >You've just booked <%= @booking.space.name %>! </h2>
+  </div>
+</div>
+<div id="colorBox">
+  <p class="text-center" id="yourRecap">Recap for your booking:</p>
+</div>
 
+
+<div class="RecapWrapper flexbox">
+    <div class="StartDateContainer" style="width:50%;">
+      <div class="StartDateLabel">
+        <p class="headerRecap">Start date</p>
+      </div>
+        <div class="StartDateSubtitle">
+          <p class="subtitle"><%= @booking.start_day.strftime("%A %d %B") %>
+          </p>
+        </div>
+    </div>
+  <div class="EndDateBigContainer">
+    <div class="EndDateContainer" style="width:100%;">
+      <div class="EndDateLabel">
+        <p class="headerRecap">End date</p>
+      </div>
+        <div class="EndDateSubtitle">
+          <p class="subtitle"><%= @booking.end_day.strftime("%A %d %B") %></p>
+        </div>
+    </div>
+  </div>
+  <div class="DurationBigContainer">
+    <div class="DurationContainer" style="width:100%;">
+      <div class="DurationLabel">
+        <p class="headerRecap">Duration</p>
+      </div>
+        <div class="DurationSubtitle">
+          <p class="subtitle"><%= @booking.duration %></p>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- <p>For <%= @booking.price %> €</p>
+<p><%= link_to "Back to spaces", spaces_path %></p> -->

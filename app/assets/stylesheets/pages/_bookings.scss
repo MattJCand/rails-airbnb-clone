@@ -1,0 +1,22 @@
+#bannerBooked {
+  color: white;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 50%), image-url("banner.jpg") ;
+}
+#bannerBooked h2{
+  line-height: 1.4;
+}
+
+#yourRecap{
+  font-size: 24px;
+  padding-bottom: 15px;
+  padding-top: 7px;
+  margin: 0;
+}
+
+#colorBox{
+  background-color:#e9e9e9;
+}
