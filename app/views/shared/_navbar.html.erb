@@ -17,6 +17,11 @@
                 <% end %>
               </li>
               <li>
+                <%= link_to spaces_path, class: 'become_curator' do %>
+                  <%= t(".profile", default: "Venues") %>
+                <% end %>
+              </li>
+              <li>
                 <%= link_to destroy_user_session_path, method: :delete, class: 'become_curator' do %>
                   <%= t(".sign_out", default: "Log Out") %>
                 <% end %>
@@ -34,6 +39,11 @@
               <li>
                 <%= link_to new_user_session_path, class: 'become_curator' do %>
                   <%= t(".profile", default: "Become a curator") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to spaces_path, class: 'become_curator' do %>
+                  <%= t(".profile", default: "Venues") %>
                 <% end %>
               </li>
               <li>

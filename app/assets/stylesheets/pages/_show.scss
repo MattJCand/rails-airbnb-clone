@@ -3,4 +3,38 @@
   background-size: cover;
   background-repeat: no-repeat;
   margin-top: 10px;
+
+}
+
+.content h1 {
+  color: white;
+  text-shadow: 4px 4px black;
+   margin: 470px 0 0 680px;
+}
+
+.list-click li {
+  display: inline-block;
+  padding-top: 30px;
+}
+
+
+#venue-description {
+    padding: 50px 0;
+    padding-bottom: 50px;
+    font-size: 14px;
+    color: #555555;
+}
+
+hr {
+    margin-top: 22px;
+    margin-bottom: 22px;
+    margin-right: 215px;
+    border: 0;
+    border-top: 1px solid #eeeeee;
+}
+
+#venue-data {
+    font-weight: normal;
+    font-size: 15px;
+    color: #797373;
 }
