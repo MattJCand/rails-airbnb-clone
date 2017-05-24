@@ -1,12 +1,41 @@
-<h1><%= @user.first_name %> <%= @user.last_name %></h1>
-<p>Your email: <%= @user.email %></p>
-<p>Your bookings:
-<ul>
-<% @bookings.each do |booking| %>
-  <li><%= booking.space.name %></li>
-  <li>Period: <%= booking.start_day.strftime("%A %d %B") %> - <%= booking.end_day.strftime("%A %d %B") %></li>
-  <li>Length of stay: <%= booking.duration %> days</li>
-  <li>Price: <%= booking.price %></li>
+<div class="container" id="container-profile">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-4 ">
+      <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/201x200"%>
+      <%= image_tag avatar_url, class: "avatar-super-large", id: "navbar-wagon-menu" %>
+    </div>
+    <div class="col-xs-12 col-sm-4 col-md-5">
+      <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+      <h4>Your email: <%= @user.email %></h4>
+    </div>
+  </div>
+  <hr>
+</div>
+
+<div class="container">
+<h2>Your bookings:</h2>
+</div>
+
+<div class="container">
+  <% @bookings.each do |booking| %>
+<div class="booking">
+  <div class='booking-details'>
+    <div class='booking-name'><%= booking.space.name %></div>
+  </div>
+  <% if booking.space.photo? %>
+    <%= cl_image_tag booking.space.photo.path, width: 200, height: 100, crop: :fill %>
+  <% end %>
+  <div class='booking-body'>
+    <h4>Period: <%= booking.start_day.strftime("%A %d %B") %> - <%= booking.end_day.strftime("%A %d %B") %></h4>
+    <br>
+    <p><strong>Length of stay: <%= booking.duration %> days</strong></p>
+    <br>
+    <p><strong>Price: <%= booking.price %></strong></p>
+  </div>
+</div>
 <% end %>
-</ul>
+<hr>
+</div>
+</div>
 

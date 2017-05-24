@@ -1,16 +1,92 @@
-<h1>Show d'un space</h1>
-<h2><%= @space.name %></h2>
-<p><%= @space.address %></p>
-<p><%= @space.size %> m2</p>
-<p><%= @space.price_by_day %> €/jour</p>
-<p>nails: <%= @space.nails %> </p>
-<p>drill: <%= @space.drill %></p>
-<p><%= @space.plugs %> plugs</p>
-<p><%= @space.windows %>windows</p>
-<p><%= @space.wc %> wc</p>
-<% if @space.photo? %>
-  <%= cl_image_tag @space.photo.path, width: 200, height: 300, crop: :fill %>
-<% end %>
-<%= link_to "Book", new_space_booking_path(@space), class: "btn btn-primary" %>
-<p><%= link_to "Back to spaces", spaces_path %></p>
+<div class="jumbotron" style="background-image: url('<%= cl_image_path(@space.photo.path) %>');">
+  <div class="container">
+    <div class="content">
+      <h1><%= @space.name %></h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sd-10 col-sm-offset-1">
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>About this venue</h2>
+          <p><%= @space.description %></p>
+        </div>
+        <div class="col-md-4">
+          <ul class="list-click pull-right">
+            <li>
+              <%= link_to "Book", new_space_booking_path(@space), class: "btn btn-primary" %>
+            </li>
+            <li>
+              <%= link_to "Back to venues", spaces_path, class: "btn btn-primary" %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="venue-description">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sd-10 col-sm-offset-1">
+        <hr>
+        <h3><%= @space.address %></h3>
+        <hr>
+        <div class="row" id="venue-data">
+          <div class="col-xs-12 col-sd-3 col-md-3">
+            <p><strong>Venue details</strong></p>
+          </div>
+          <div class="col-xs-12 col-sd-4 col-md-4">
+            <p><i class="fa fa-arrows-alt" aria-hidden="true"></i> - Venue size : <strong><%= @space.size %> m²</strong></p>
+            <p><i class="fa fa-money" aria-hidden="true"></i> - Venue price : <strong><%= @space.price_by_day %> €/jour</strong></p>
+            <p><i class="fa fa-map-pin" aria-hidden="true"></i> - nails: <strong><%= @space.nails %></strong> </p>
+            <p><i class="fa fa-wrench" aria-hidden="true"></i> - drill: <strong><%= @space.drill %></strong></p>
+          </div>
+          <div class="col-xs-12 col-sd-4 col-md-4">
+            <p><i class="fa fa-plug" aria-hidden="true"></i> - Available plugs: <strong><%= @space.plugs %></strong></p>
+            <p><i class="fa fa-windows" aria-hidden="true"></i> - Number of Windows: <strong><%= @space.windows %></strong></p>
+            <p><i class="fa fa-male" aria-hidden="true"></i><i class="fa fa-female" aria-hidden="true"></i> - Number of WC: <strong><%= @space.wc %></strong></p>
+          </div>
+        </div>
+        <hr>
+
+          <div class="col-md-offset-1 col-md-10">
+          <div id="map" style="width: 80%; height: 300px;">
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' },
+       provider : { scrollwheel: false } },
+       function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(15);
+        }
+      });
+    });
+    <% end %>
+    <% end %>
+
 

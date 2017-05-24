@@ -1,7 +1,7 @@
 <div class="container">
   <div class="flexbox">
     <h2>SEARCH BAR HERE</h2>
-    <%= link_to "Add a space", new_space_path, class: "btn btn-primary" %>
+    <%= link_to "Add a venue", new_space_path, class: "btn btn-primary" %>
   </div>
 </div>
 <div class="container">
@@ -14,16 +14,33 @@
             <% else %>
               <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('noimage.jpg') %>')"></div>
           <% end %>
-          <h2 class="card-description"><%= space.price_by_day %> <%= space.name %></h2>
-          <p class="card-description"><%= space.address %> <%= space.size %></p>
+          <h2 class="card-description"><%= space.name %> - <%= space.price_by_day %>€/day</h2>
+          <h5 class="card-description">Surface: <%= space.size %>m² - <%= space.address %></h5>
           <%= link_to "", space_path(space), class: "card-link" %>
         </div>
       <% end %>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-4">
-    <h1>MAP HERE</h1>
+      <div id="map" style="width: 100%; height: 800px;"></div>
     </div>
   </div>
 </div>
 
 
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+    });
+  <% end %>
+<% end %>
