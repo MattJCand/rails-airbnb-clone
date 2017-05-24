@@ -1,1 +1,12 @@
-<%= @user.email %>
+<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<p>Your email: <%= @user.email %></p>
+<p>Your bookings:
+<ul>
+<% @bookings.each do |booking| %>
+  <li><%= booking.space.name %></li>
+  <li>Period: <%= booking.start_day.strftime("%A %d %B") %> - <%= booking.end_day.strftime("%A %d %B") %></li>
+  <li>Length of stay: <%= booking.duration %> days</li>
+  <li>Price: <%= booking.price %></li>
+<% end %>
+</ul>
+
