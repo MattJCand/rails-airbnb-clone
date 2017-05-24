@@ -1,9 +1,29 @@
-<h1>Index</h1>
-<%= link_to "Add a space", new_space_path %>
-<p><% @spaces.each do |space| %></p>
-  <p><%= space.name %></p>
-  <p><%= space.address %></p>
-  <p><%= space.size %></p>
-  <p><%= link_to "See more details", space_path(space) %></p>
-<% end %>
-<p><%= link_to "Back to Home", root_path %></p>
+<div class="container">
+  <div class="flexbox">
+    <h2>SEARCH BAR HERE</h2>
+    <%= link_to "Add a space", new_space_path, class: "btn btn-primary" %>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-8">
+      <% @spaces.each do |space| %>
+        <div class="col-xs-12 col-md-6">
+          <%if space.photo? %>
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path space.photo.path, height: 300, width: 400, crop: :fill %>')"></div>
+            <% else %>
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('noimage.jpg') %>')"></div>
+          <% end %>
+          <h2 class="card-description"><%= space.price_by_day %> <%= space.name %></h2>
+          <p class="card-description"><%= space.address %> <%= space.size %></p>
+          <%= link_to "", space_path(space), class: "card-link" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-4 col-md-4">
+    <h1>MAP HERE</h1>
+    </div>
+  </div>
+</div>
+
+
