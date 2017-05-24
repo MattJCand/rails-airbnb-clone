@@ -1,4 +1,5 @@
 <div id="bannerBooked">
+<!-- @space.photo -->
   <div class="banner-content text-center">
     <h2>Congratulations,<br >You've just booked <%= @booking.space.name %>! </h2>
   </div>
@@ -9,7 +10,8 @@
 
 
 <div class="RecapWrapper flexbox">
-    <div class="StartDateContainer" style="width:50%;">
+  <div class="StartDateBigContainer">
+    <div class="StartDateContainer">
       <div class="StartDateLabel">
         <p class="headerRecap">Start date</p>
       </div>
@@ -18,8 +20,9 @@
           </p>
         </div>
     </div>
+  </div>
   <div class="EndDateBigContainer">
-    <div class="EndDateContainer" style="width:100%;">
+    <div class="EndDateContainer">
       <div class="EndDateLabel">
         <p class="headerRecap">End date</p>
       </div>
@@ -29,7 +32,7 @@
     </div>
   </div>
   <div class="DurationBigContainer">
-    <div class="DurationContainer" style="width:100%;">
+    <div class="DurationContainer">
       <div class="DurationLabel">
         <p class="headerRecap">Duration</p>
       </div>
@@ -40,5 +43,44 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-6 no-padding-left">
+          <h3>About the place:</h3>
+          <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod minus laboriosam, reprehenderit animi sequi error omnis.</p>
+        </div>
+        <div class="col-md-6">
+          <h3>Cancellation policy:</h3>
+          <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam  alias minus, sapiente aliquam aperiam mollitia quas at quibusdam perspiciatis ipsa officiis illum quasi rerum.</p>
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-md-6 no-padding-left">
+        <h3>Security deposit:</h3>
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est deleniti nam, nisi quae delectus adipisci voluptatibus ea voluptate sunt, at iste fugit.</p>
+      </div>
+      <div class="col-md-6">
+        <h3>Payement:</h3>
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est deleniti nam, nisi quae delectus adipisci voluptatibus ea voluptate sunt, at iste fugit.</p>
+      </div>
+    </div>
+    </div>
+    <div class="col-md-4 no-padding-right">
+      <h3 id="payout">Payout:</h3>
+      <div class="col-md-6 no-padding-left">
+        <p>€<%= @booking.space.price_by_day %> x <%= @booking.duration %>days</p>
+        <p>Curate Service Fee</p>
+        <p>Total Payout</p>
+      </div>
+      <div class="col-md-6" id="rightAlign">
+        <p><%= @booking.price %>€</p>
+        <p><%= @booking.space.price_by_day %>€</p>
+        <p><%= @booking.price + @booking.space.price_by_day%>€</p>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- <p>For <%= @booking.price %> €</p>
 <p><%= link_to "Back to spaces", spaces_path %></p> -->

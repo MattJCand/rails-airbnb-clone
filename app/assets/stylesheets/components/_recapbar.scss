@@ -27,3 +27,24 @@
   font-weight: bold;
 }
 
+.StartDateBigContainer{
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.EndDateBigContainer{
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.DurationBigContainer{
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
