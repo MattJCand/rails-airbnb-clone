@@ -17,6 +17,11 @@
                 <% end %>
               </li>
               <li>
+                <%= link_to spaces_path, class: 'become_curator' do %>
+                  <%= t(".profile", default: "Venues") %>
+                <% end %>
+              </li>
+              <li>
                 <%= link_to user_path(current_user), class: 'become_curator' do %>
                   <%= t(".profile", default: "My profile") %>
                 <% end %>
@@ -40,8 +45,8 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to "#", class: 'become_curator' do %>
-                  <%= t(".profile", default: "Sign up") %>
+                <%= link_to spaces_path, class: 'become_curator' do %>
+                  <%= t(".profile", default: "Venues") %>
                 <% end %>
               </li>
               <li>
