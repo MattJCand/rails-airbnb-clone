@@ -25,6 +25,13 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 
+#Add Google Map & geocoding
+gem "geocoder"
+gem "gmaps4rails"
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
+
 #Add Omniauthable (for Facebook Connect)
 gem 'omniauth-facebook'
 
