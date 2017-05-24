@@ -14,8 +14,8 @@
             <% else %>
               <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('noimage.jpg') %>')"></div>
           <% end %>
-          <h2 class="card-description"><%= space.price_by_day %> <%= space.name %></h2>
-          <p class="card-description"><%= space.address %> <%= space.size %></p>
+          <h2 class="card-description"><%= space.name %> - <%= space.price_by_day %>€/day</h2>
+          <h5 class="card-description">Surface: <%= space.size %>m² - <%= space.address %></h5>
           <%= link_to "", space_path(space), class: "card-link" %>
         </div>
       <% end %>

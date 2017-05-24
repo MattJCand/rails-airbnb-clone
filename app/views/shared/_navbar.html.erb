@@ -12,7 +12,7 @@
         <div class="navbar-wagon-item">
             <ul class="nav nav-pills pull-left">
               <li>
-                <%= link_to user_path(current_user), class: 'become_curator' do %>
+                <%= link_to new_space_path, class: 'become_curator' do %>
                   <%= t(".profile", default: "Become a curator") %>
                 <% end %>
               </li>
@@ -22,19 +22,16 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to user_path(current_user), class: 'become_curator' do %>
-                  <%= t(".profile", default: "My profile") %>
-                <% end %>
-              </li>
-              <li>
                 <%= link_to destroy_user_session_path, method: :delete, class: 'become_curator' do %>
-                  <%= t(".sign_out", default: "Log-Out") %>
+                  <%= t(".sign_out", default: "Log Out") %>
                 <% end %>
               </li>
             </ul>
           </div>
-          <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
-          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= link_to user_path(current_user) do %>
+            <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+            <%= image_tag avatar_url, class: "avatar-large", id: "navbar-wagon-menu" %>
+          <% end %>
         </div>
     <% else %>
         <div class="navbar-wagon-item">
