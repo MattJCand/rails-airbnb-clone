@@ -1,31 +1,32 @@
-<div class="container">
-  <div class="flexbox">
-    <h2>SEARCH BAR HERE</h2>
+<div class="wrapper search">
+    <h2 class="searchcont">SEARCH BAR HERE</h2>
   </div>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-8 col-md-8">
-      <div class="col-xs-12 col-md-6">
-        <%= image_tag "add-v.jpg", class: "venue-add" %>
-        <h2 class="add-description">Add a venue</h2>
-        <%= link_to "", new_space_path, class: "card-link" %>
-      </div>
-      <% @spaces.each do |space| %>
-      <div class="col-xs-12 col-md-6">
-        <%if space.photo? %>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path space.photo.path, height: 300, width: 400, crop: :fill %>')"></div>
-        <% else %>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('noimage.jpg') %>')"></div>
+<div>
+  <div class="row specialrow">
+    <div class="col-xs-12 col-sm-8 col-md-8 column">
+      <div class="wrapper scrollcard">
+        <div class="col-xs-12 col-md-6">
+          <%= image_tag "add-v.jpg", class: "venue-add" %>
+          <h2 class="add-description">Add a venue</h2>
+          <%= link_to "", new_space_path, class: "card-link" %>
+        </div>
+        <% @spaces.each do |space| %>
+        <div class="col-xs-12 col-md-6">
+          <%if space.photo? %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path space.photo.path, height: 300, width: 400, crop: :fill %>')"></div>
+          <% else %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('noimage.jpg') %>')"></div>
+          <% end %>
+          <h2 class="card-description"><%= space.name %> - <%= space.price_by_day %>€/day</h2>
+          <h5 class="card-description">Surface: <%= space.size %>m² - <%= space.address %></h5>
+          <%= link_to "", space_path(space), class: "card-link" %>
+        </div>
         <% end %>
-        <h2 class="card-description"><%= space.name %> - <%= space.price_by_day %>€/day</h2>
-        <h5 class="card-description">Surface: <%= space.size %>m² - <%= space.address %></h5>
-        <%= link_to "", space_path(space), class: "card-link" %>
       </div>
-      <% end %>
     </div>
-    <div class="col-xs-12 col-sm-4 col-md-4">
-      <div id="map" style="width: 100%; height: 800px;"></div>
+    <div class="col-xs-12 col-sm-4 col-md-4 column">
+      <div id="map" style="width: 100%; height: 90vh;"></div>
     </div>
   </div>
 </div>

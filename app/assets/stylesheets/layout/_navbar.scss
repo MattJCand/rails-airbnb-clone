@@ -39,11 +39,12 @@
 }
 
 .navbar-wagon-item a{
-  color: black;
+  color: #B2B2B2;
+  font-weight: bold;
 }
 
 .navlink {
-  color: black;
+  color: #B2B2B2;
   text-decoration: none;
 }
 
@@ -114,8 +115,9 @@
 .become_curator:hover {
   box-shadow: inset 0px 0 #000;
   background-color: none;
-  border-bottom: 3px solid #000;
+  border-bottom: inset 3px #000;
   font-weight: bold;
+  color: black;
 }
 
 .nav-pills > li > a {

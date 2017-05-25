@@ -32,7 +32,7 @@ p {
   right: 0;
   width: 100%;
   z-index:2;
-  background: black;
+  background: none;
   opacity: 0;
 }
 .card-link:hover{
@@ -48,4 +48,29 @@ p {
 
 .add-description {
   margin-top: 0px;
+}
+
+.column {
+  padding: 0px;
+  height: 100%;
+}
+
+.specialrow {
+  height: 90vh;
+}
+
+.scrollcard{
+    margin-left: 15px;
+    height: 100%;
+    overflow: scroll;
+}
+
+.search {
+  background-color: white;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  height: 70px;
+}
+
+.searchcont{
+  padding: 20px;
 }
