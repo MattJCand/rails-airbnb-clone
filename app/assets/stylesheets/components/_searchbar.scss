@@ -1,3 +1,5 @@
+
+
   .searchBarWrapper{
   padding-top: 10px !important;
   padding-bottom: 8px !important;
@@ -41,9 +43,13 @@
   margin-top: 16px !important;
 }
 
+.containerLocationLabel{
+  margin-left: 10px;
+}
+
 .containerLocationLabelTitle{
   margin-top: -3px !important;
-  margin-left: 5px !important;
+  margin-left: 10px !important;
 }
 
 .containerLocationSubtitle{
@@ -69,10 +75,6 @@
   padding-top: undefined !important;
   padding-bottom: undefined !important;
   color: #484848 !important;
-  border-width: 1px !important;
-  border-style: solid !important;
-  border-color: #ffffff !important;
-  border-radius: 2px !important;
   background-color: #ffffff !important;
   margin-bottom: 0px !important;
   position: relative !important;
@@ -98,7 +100,7 @@
   padding-bottom: 0px !important;
   color: #484848 !important;
   display: block !important;
-  margin-left: 16px !important;
+  margin-left: 20px !important;
   margin-top: 16px !important;
 }
 
@@ -123,3 +125,25 @@
 }
 
 
+
+
+#homeform .form-control {
+    // display: block;
+    width: 100%;
+    height: 36px;
+    padding: 6px 12px;
+    font-size: 16px;
+    color: #000000;
+    background-color: white;
+    border: 0px solid white;
+    border-radius: 0px;
+    box-shadow: none;
+    padding-top: 30px;
+}
+
+#homeform .form-control:focus {
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+
+}

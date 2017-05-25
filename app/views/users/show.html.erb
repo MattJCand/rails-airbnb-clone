@@ -33,7 +33,7 @@
     <br>
     <p><strong>Price: <%= booking.price %>€</strong></p>
   </div>
-  <%= link_to "Cancel my booking", space_path(current_user),
+  <%= link_to "Cancel my booking", booking_path(booking),
         method: :delete,
         data: { confirm: "Are you sure you want to cancel this booking?" } %>
 </div>
