@@ -27,15 +27,65 @@
     <%= cl_image_tag booking.space.photo.path, width: 200, height: 100, crop: :fill %>
   <% end %>
   <div class='booking-body'>
-    <h4>Period: <%= booking.start_day.strftime("%A %d %B") %> - <%= booking.end_day.strftime("%A %d %B") %></h4>
+    <h4><%= booking.start_day.strftime("%A %d %B") %> - <%= booking.end_day.strftime("%A %d %B") %></h4>
     <br>
     <p><strong>Length of stay: <%= booking.duration %> days</strong></p>
     <br>
-    <p><strong>Price: <%= booking.price %></strong></p>
+    <p><strong>Price: <%= booking.price %>€</strong></p>
   </div>
 </div>
 <% end %>
 <hr>
 </div>
 </div>
+
+<div class="container">
+<h2>Your booked venues:</h2>
+</div>
+
+<div class="container">
+  <% @owner_bookings.each do |owner_booking| %>
+<div class="booking">
+  <div class='booking-details'>
+    <div class='booking-name'><%= owner_booking.space.name %></div>
+  </div>
+  <% if owner_booking.space.photo? %>
+    <%= cl_image_tag owner_booking.space.photo.path, width: 200, height: 100, crop: :fill %>
+  <% end %>
+  <div class='booking-body'>
+    <h4><%= owner_booking.start_day.strftime("%A %d %B") %> - <%= owner_booking.end_day.strftime("%A %d %B") %></h4>
+    <br>
+    <p><strong>Length of stay: <%= owner_booking.duration %> days</strong></p>
+    <br>
+    <p><strong>Price: <%= owner_booking.price %>€</strong></p>
+  </div>
+</div>
+<% end %>
+<hr>
+</div>
+
+<div class="container">
+<h2>Your venues:</h2>
+</div>
+
+<div class="container">
+  <% @spaces.each do |space| %>
+<div class="booking">
+  <div class='booking-details'>
+    <div class='booking-name'><%= space.name %></div>
+  </div>
+  <% if space.photo? %>
+    <%= cl_image_tag space.photo.path, width: 200, height: 100, crop: :fill %>
+  <% end %>
+  <div class='booking-body'>
+    <p><strong>Price by day: <%= space.price_by_day %>€</strong></p>
+  </div>
+</div>
+<% end %>
+<hr>
+</div>
+
+
+</div>
+
 
