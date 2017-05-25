@@ -1,7 +1,6 @@
-<div id="bannerBooked">
-<!-- @space.photo -->
+<div id="bannerBooked" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @booking.space.photo.path %>')">
   <div class="banner-content text-center">
-    <h2>Congratulations,<br >You've just booked <%= @booking.space.name %>! </h2>
+    <h2>Congratulations,<br>You've just booked <%= @booking.space.name %>! </h2>
   </div>
 </div>
 <div id="colorBox">
