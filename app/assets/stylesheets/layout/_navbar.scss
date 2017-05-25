@@ -112,10 +112,18 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+.become_curator {
+  box-shadow: inset 0px 0 #000;
+  border-bottom: inset 3px transparent;
+  border-top: inset 3px transparent;
+}
+
 .become_curator:hover {
   box-shadow: inset 0px 0 #000;
   background-color: none;
   border-bottom: inset 3px #000;
+  border-top: inset 3px white;
   font-weight: bold;
   color: black;
 }
@@ -126,4 +134,8 @@
 
 .nav > li > a:hover, .nav > li > a:focus {
     background: none!important;
+}
+
+.logo {
+
 }
