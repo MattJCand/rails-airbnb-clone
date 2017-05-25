@@ -1,5 +1,34 @@
 <div class="wrapper search">
-    <h2 class="searchcont">SEARCH BAR HERE</h2>
+<div class="col-md-8">
+    <div ><!-- react-empty: 138 -->
+      <%= simple_form_for :space, url: spaces_path, method: :get, html: { class:"flexbox" } do |f|%>
+        <div class="searchContainer">
+          <div class="locationContainer" style="width:100%;">
+              <div class="containerLocationSubtitle" id="special">
+                <%= f.input :name, class:'locationInput', placeholder: 'Location', label: false %>
+              </div>
+              <div class="Underline">
+            </div>
+          </div>
+        </div>
+        <div class="searchDateContainer">
+          <div class="dateContainer" style="width:100%;">
+              <div class="container_datepicker">
+                <input type="date" placeholder="Dates" class="dateInput">
+              </div>
+            <div class="Underline"></div>
+          </div>
+        </div>
+        <div class="searchButtonContainer">
+          <div class="buttonContainer" style="width:100%;">
+              <%= f.submit "Search", class: 'btn btn-sm' %>
+           <!--  </button> -->
+            <div class="Underline"></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    </div>
   </div>
 </div>
 <div>
