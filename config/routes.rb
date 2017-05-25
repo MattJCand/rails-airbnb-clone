@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   resources :spaces, only: [ :new, :index, :show, :create, :destroy ] do
     resources :bookings, only: [ :new, :index, :create ]
   end
+  resources :spaces, only: [ :new, :index, :show, :create, :destroy ] do
+      resources :reviews, only: [:new, :create ]
+  end
   resources :bookings, only: [ :show, :destroy ]
+  resources :reviews, only: [:show, :destroy]
   resources :users, only: [:show]
   mount Attachinary::Engine => "/attachinary"
   #resources :bookings, only: [ :new, :index, :show, :create ]
