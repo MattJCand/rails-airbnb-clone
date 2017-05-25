@@ -1,16 +1,60 @@
-<%= simple_form_for @space do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :description %>
-  <%= f.input :size %>
-  <%= f.input :price_by_day %>
-  <%= f.input :nails %>
-  <%= f.input :drill %>
-  <%= f.input :plugs %>
-  <%= f.input :windows %>
-  <%= f.input :wc %>
-  <%= f.input :photo, as: :attachinary %>
-  <%= f.button :submit, class: 'btn btn-primary' %>
-<% end %>
-<br><br>
-<p><%= link_to "Go back to venues", spaces_path %></p>
+<div>
+  <p class="rightAlign rightTag"><%= link_to "Go back to venues", spaces_path %></p>
+</div>
+<div class="form-style flexbox">
+  <%= simple_form_for @space do |f| %>
+  <div class="row">
+    <div class="col-md-12">
+      <%= f.input :name %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <%= f.input :address %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" id="description">
+    <%= f.input :description %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.input :size %>
+    </div>
+    <div class="col-md-6">
+      <%= f.input :price_by_day %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-offset-2 col-md-2">
+      <%= f.input :nails %>
+    </div>
+    <div class="col-md-offset-4 col-md-2">
+      <%= f.input :drill %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.input :plugs %>
+    </div>
+    <div class="col-md-4">
+      <%= f.input :windows %>
+    </div>
+    <div class="col-md-4">
+      <%= f.input :wc %>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.input :photo, as: :attachinary %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-offset-4 col-md-4">
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<br>
