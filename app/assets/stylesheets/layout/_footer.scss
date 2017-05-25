@@ -1,4 +1,8 @@
 // Your footer style
+.footer {
+  margin: 0px 25px 0px 25px;
+}
+
 #footeur {
   background-color: white;
 }
@@ -29,4 +33,19 @@
   margin-right: 20px;
   left: 6em;
   position: absolute;
+}
+
+#footer {
+    i {
+    color: $footer-text;
+    font-size: 30px;
+    letter-spacing: 20px;
+    transition: color 0.5s ease;
+      &:hover{
+        color: $footer-hover;
+    }
+  }
+    p {
+    color:$footer-text;
+  }
 }
