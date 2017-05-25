@@ -21,10 +21,11 @@
               <%= link_to "Book", new_space_booking_path(@space), class: "btn btn-primary" %>
             </li>
             <li>
-              <%= link_to "Back to spaces", spaces_path, class: "btn btn-primary" %>
+              <%= link_to "Back to venues", spaces_path, class: "btn btn-primary" %>
             </li>
           </ul>
         </div>
+      </div>
     </div>
   </div>
 </div>
@@ -52,20 +53,29 @@
             <p><i class="fa fa-male" aria-hidden="true"></i><i class="fa fa-female" aria-hidden="true"></i> - Number of WC: <strong><%= @space.wc %></strong></p>
           </div>
         </div>
-          <hr>
         <hr>
+
+          <div class="col-md-offset-1 col-md-10">
+          <div id="map" style="width: 80%; height: 300px;">
       </div>
     </div>
   </div>
 </div>
-<div id="map" style="width: 100%; height: 300px;"></div>
-
+  </div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     $(document).ready(function() {
       var handler = Gmaps.build('Google');
-      handler.buildMap({ internal: { id: 'map' } }, function() {
+      handler.buildMap({ internal: { id: 'map' },
+       provider : { scrollwheel: false } },
+       function() {
         markers = handler.addMarkers(<%= raw @hash.to_json %>);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
@@ -76,5 +86,7 @@
         }
       });
     });
-  <% end %>
-<% end %>
+    <% end %>
+    <% end %>
+
+
