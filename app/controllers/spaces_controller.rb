@@ -17,6 +17,7 @@ class SpacesController < ApplicationController
 
   def show
     @space = Space.find(params[:id])
+    @review = Review.new
     @space_coordinates = { lat: @space.latitude, lng: @space.longitude }
     @spaces = Space.where.not(latitude: nil, longitude: nil)
     @hash = Gmaps4rails.build_markers(@space) do |space, marker|

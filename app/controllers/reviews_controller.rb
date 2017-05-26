@@ -1,33 +1,14 @@
 class ReviewsController < ApplicationController
 
-  def index
-    @reviews = Review.all
-  end
-
-  def new
-    @space = Space.find(params[:space_id])
-    @review = Review.new
-  end
-
-  def show
-    @review = Review.find(params[:id])
-  end
-
   def create
+    @space = Space.find(params[:space_id])
     @review = Review.new(review_params)
-    @review.space = Space.find(params[:space_id])
+    @space.restaurant = @space
     if @review.save
-      redirect_to space_path(@review.space)
+      redirect_to space_path(@space)
     else
-      render 'new'
+      render 'spaces/show'
     end
-  end
-
-  def destroy
-    @review = Review.find(params[:id])
-    @review.space = Space.find(params[:space_id])
-    @review.destroy
-    redirect_to space_path(@review.space)
   end
 
   private
