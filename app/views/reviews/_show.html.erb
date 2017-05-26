@@ -1,11 +1,23 @@
 <div class="media" data-review-id="<%= review.id %>">
-  <%= image_tag "icon_avatar.jpg", class:"avatar-large" %>
+    <div class="row">
+    <div class="col-md-2">
+      <%= link_to user_path(current_user) do %>
+      <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+      <%= image_tag avatar_url, class: "avatar-large", id: "navbar-wagon-menu" %>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <h4 class="media-heading user_name">Me</h4>
+    </div>
+  </div>
   <div class="media-body">
-    <h4 class="media-heading user_name">Edouard</h4>
-    <p>
-      <%= review.comment %>
-      <%= link_to "Delete", review_path(review), method: :delete, remote: true %>
-    </p>
-   </div>
+  <div class="flex-review">
+    <p style="color: black; font-size: 15px;"><%= review.comment %></p>
+    <%= link_to review_path(review), method: :delete, remote: true do %>
+      <i class="fa fa-trash-o fa" aria-hidden="true" style="color: black;"></i>
+    <% end %>
+  </div>
+  </div>
 </div>
+
 

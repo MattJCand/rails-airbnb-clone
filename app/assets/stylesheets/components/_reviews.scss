@@ -1,0 +1,28 @@
+textarea.form-control {
+    height: auto;
+    width: 120vh;
+}
+
+.media-heading {
+    margin-top: 23px;
+    margin-bottom: 0px;
+    margin-left: -100px;
+    text-decoration: underline;
+}
+
+p {
+    font-size: 20px;
+    margin: 0px 0px 10px;
+}
+
+.flex-review{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin: 10px;
+}
+
+.media{
+  border-bottom: 1px solid #B2B2B2;
+}
