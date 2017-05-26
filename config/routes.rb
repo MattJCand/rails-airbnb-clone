@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [ :show, :destroy ]
   resources :reviews, only: :destroy
-  resources :users, only: [:show]
+  resources :users, only: :show
   mount Attachinary::Engine => "/attachinary"
   #resources :bookings, only: [ :new, :index, :show, :create ]
 end

@@ -80,12 +80,18 @@
     <div class="row">
       <div class="col-md-8">
           <div class="page-header">
-            <h1><small class="pull-right">Nbr com</small> Comments </h1>
+            <div id="review_count">
+              <%= render 'review_count', reviews: @space.reviews %>
+            </div>
           </div>
           <div class="comments-list" id="reviews">
+          <% if @space.reviews.blank? %>
+                Please write the first review for <%= @space.name %>
+          <% else %>
             <% @space.reviews.each do |review| %>
                 <%= render 'reviews/show', review: review %>
             <% end %>
+          <% end %>
           </div>
         </div>
     </div>
