@@ -19,6 +19,7 @@ class BookingsController < ApplicationController
     @price = @booking.space.price_by_day
     @time = @booking.duration
     @booking.price = @price * @time
+
     @start = @booking.start_day
     @booking.end_day = @start + @time
     if @booking.save
