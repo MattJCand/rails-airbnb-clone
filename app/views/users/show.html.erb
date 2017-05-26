@@ -19,25 +19,29 @@
 
 <div class="container">
   <% @bookings.each do |booking| %>
-<div class="booking">
-  <div class='booking-details'>
-    <div class='booking-name'><%= booking.space.name %></div>
-  </div>
-  <% if booking.space.photo? %>
-    <%= cl_image_tag booking.space.photo.path, width: 200, height: 100, crop: :fill %>
-  <% end %>
-  <div class='booking-body'>
-    <h4><%= booking.start_day.strftime("%A %d %B") %> - <%= booking.end_day.strftime("%A %d %B") %></h4>
-    <br>
-    <p><strong>Length of stay: <%= booking.duration %> days</strong></p>
-    <br>
-    <p><strong>Price: <%= booking.price %>€</strong></p>
-  </div>
+    <div class="booking">
+    <%= link_to space_path(booking.space), class: "booking", :method => :get do %>
+      <div class='booking-details'>
+        <div class='booking-name'><%= booking.space.name %></div>
+      </div>
+    <% if booking.space.photo? %>
+      <%= cl_image_tag booking.space.photo.path, width: 200, height: 100, crop: :fill %>
+    <% end %>
+        <div class='booking-body'>
+          <h4><%= booking.start_day.strftime("%A %d %B") %> - <%= booking.end_day.strftime("%A %d %B") %></h4>
+          <br>
+          <p><strong>Length of stay: <%= booking.duration %> days</strong></p>
+          <br>
+          <p><strong>Price: <%= booking.price %>€</strong></p>
+        </div>
+    <% end %>
+    <div class='booking-destroy'>
   <%= link_to "Cancel my booking", booking_path(booking),
         method: :delete,
         data: { confirm: "Are you sure you want to cancel this booking?" } %>
-</div>
-<% end %>
+      </div>
+    </div>
+  <% end %>
 <hr>
 </div>
 
@@ -48,6 +52,7 @@
 <div class="container">
   <% @owner_bookings.each do |owner_booking| %>
 <div class="booking">
+<%= link_to space_path(owner_booking.space), class: "booking", :method => :get do %>
   <div class='booking-details'>
     <div class='booking-name'><%= owner_booking.space.name %></div>
   </div>
@@ -61,9 +66,12 @@
     <br>
     <p><strong>Price: <%= owner_booking.price %>€</strong></p>
   </div>
+  <% end %>
+  <div class='booking-destroy'>
   <%= link_to "Cancel the booking", booking_path(owner_booking),
         method: :delete,
         data: { confirm: "Are you sure you want to cancel this booking?" } %>
+  </div>
 </div>
 <% end %>
 <hr>
@@ -76,6 +84,7 @@
 <div class="container">
   <% @spaces.each do |space| %>
 <div class="booking">
+<%= link_to space_path(space), class: "booking", :method => :get do %>
   <div class='booking-details'>
     <div class='booking-name'><%= space.name %></div>
   </div>
@@ -85,9 +94,12 @@
   <div class='booking-body'>
     <p><strong>Price by day: <%= space.price_by_day %>€</strong></p>
   </div>
+  <% end %>
+  <div class='booking-destroy'>
   <%= link_to "Remove my venue", space_path(space),
         method: :delete,
         data: { confirm: "Are you sure you want to stop renting your venue?" } %>
+  </div>
 </div>
 <% end %>
 <hr>
