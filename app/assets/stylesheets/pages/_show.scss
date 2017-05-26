@@ -19,18 +19,18 @@
 
 
 #venue-description {
-    padding: 50px 0;
-    padding-bottom: 50px;
-    font-size: 14px;
-    color: #555555;
+  padding: 50px 0;
+  padding-bottom: 50px;
+  font-size: 14px;
+  color: #555555;
 }
 
 hr {
-    margin-top: 22px;
-    margin-bottom: 22px;
-    margin-right: 215px;
-    border: 0;
-    border-top: 1px solid #eeeeee;
+  margin-top: 22px;
+  margin-bottom: 22px;
+  margin-right: 215px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
 }
 
 #venue-data {
@@ -39,64 +39,3 @@ hr {
     color: #797373;
 }
 
-#container-profile {
-  margin-top: 20px;
-  margin-left: 250px;
-}
-
-.booking {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  border-radius: 3px;
-  transition: all 0.15s ease;
-  width: 925px;
-}
-
-/* Body design */
-.booking-body {
-  flex: 1 1 auto;
-  margin-left: 50px;
-}
-.booking-body h3 {
-  font-weight: bold;
-  font-size: 23px;
-  margin-top: 0;
-}
-.booking-body p {
-  font-weight: lighter;
-  color: #999999;
-  margin-bottom: 0;
-}
-
-/* Upvote design */
-.booking-name {
-  padding-right: 20px;
-  text-align: center;
-  transition: all 0.15s ease;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 20px;
-}
-.booking-name {
-  margin: 2px 0 0;
-}
-
-.booking-details {
-  flex: 0 0 10%;
-}
-
-
-/* Hover effects */
-.booking:hover {
-  background: #f7f7fa;
-  cursor: pointer;
-}
-.booking-name:hover, .product-upvote.product-upvote-upvoted {
-  color: #5898f1;
-  cursor: pointer;
-}
-
-// .product:hover .product-upvote { transform: scale(1.2) }
-.booking:hover a { color: #E6E6E6 }
-.bookinbooking-body { border-bottom: 9px solid #5898f1 }

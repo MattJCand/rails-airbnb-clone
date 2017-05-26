@@ -66,9 +66,9 @@ ActiveRecord::Schema.define(version: 20170525124058) do
     t.integer  "plugs"
     t.integer  "windows"
     t.integer  "wc"
-    t.text     "description"
     t.float    "latitude"
     t.float    "longitude"
+    t.text     "description"
     t.index ["user_id"], name: "index_spaces_on_user_id", using: :btree
   end
 
