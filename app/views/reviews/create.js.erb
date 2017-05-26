@@ -5,4 +5,5 @@
   $('#reviews').append(new_review);
   new_review.slideDown();
   $('#new_review').html("<%= j render 'reviews/form', space: @space, review: Review.new %>");
+  $('#review_count').html('<%= j render 'spaces/review_count', reviews: @space.reviews %>')
 <% end %>
