@@ -1,4 +1,4 @@
-<%= simple_form_for([ space, review ]) do |form| %>
+<%= simple_form_for([ space, review ], remote: true) do |form| %>
   <%= form.input :comment, as: :text %>
   <%= form.button :submit %>
 <% end %>

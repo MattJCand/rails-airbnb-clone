@@ -64,9 +64,17 @@
 </div>
 <hr>
 
-<!-- Modification à faire :)  -->
+<!-- Form ADD Review   -->
 
-<%= render 'reviews/form', space: @space, review: @review %>
+<div class="container">
+   <div class="row">
+     <div class="col-md_8">
+       <%= render 'reviews/form', space: @space, review: @review %>
+     </div>
+   </div>
+ </div>
+
+<!-- Form  Review Display -->
 
 <div class="container">
     <div class="row">
@@ -74,17 +82,10 @@
           <div class="page-header">
             <h1><small class="pull-right">Nbr com</small> Comments </h1>
           </div>
-          <div class="comments-list">
+          <div class="comments-list" id="reviews">
             <% @space.reviews.each do |review| %>
-            <div class="media">
-                <img src="http://lorempixel.com/40/40/people/1/" class="media-left">
-                <div class="media-body">
-                  <h4 class="media-heading user_name">User</h4>
-                  <%= review.comment %>
-                  <%= review.rating %>
-              </div>
-            </div>
-              <% end %>
+                <%= render 'reviews/show', review: review %>
+            <% end %>
           </div>
         </div>
     </div>

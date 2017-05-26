@@ -1,0 +1,10 @@
+<div class="media" data-review-id="<%= review.id %>">
+  <img src="http://lorempixel.com/40/40/people/1/" class="media-left">
+  <div class="media-body">
+    <h4 class="media-heading user_name">User</h4>
+    <p>
+      <%= review.comment %>
+      <%= link_to "Delete", review_path(review), method: :delete, remote: true %>
+    </p>
+   </div>
+</div>
