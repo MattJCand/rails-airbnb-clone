@@ -12,4 +12,8 @@ class Space < ApplicationRecord
   validates :price_by_day, presence: true
   validates :name, presence: true
   validates :address, presence: true
+  validates :size, presence: true
+  validates :plugs, presence: true
+  validates :windows, presence: true
+  validates :wc, presence: true
 end

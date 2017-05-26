@@ -59,12 +59,11 @@
   <div id="title-carousel">Our latest venues</div>
   <div id="carousel-content">
     <div class="autoplay" id="card-slider">
-      <div class="card margin-left" style="height: 300px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('1.jpg') %>')"></div>
-      <div class="card margin-left" style="height: 300px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('2.jpg') %>')"></div>
-      <div class="card margin-left" style="height: 300px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('3.jpg') %>')"></div>
-      <div class="card margin-left" style="height: 300px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('1.jpg') %>')"></div>
-      <div class="card margin-left" style="height: 300px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('2.jpg') %>')"></div>
-      <div class="card margin-left" style="height: 300px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('3.jpg') %>')"></div>
+      <% @spaces.each do |space| %>
+      <%if space.photo? %>
+        <div class="card margin-left" style="height: 300px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path space.photo.path %>')"></div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
