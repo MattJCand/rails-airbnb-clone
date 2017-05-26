@@ -1,7 +1,7 @@
 <div class="media" data-review-id="<%= review.id %>">
   <%= image_tag "icon_avatar.jpg", class:"avatar-large" %>
   <div class="media-body">
-    <h4 class="media-heading user_name">Me</h4>
+    <h4 class="media-heading user_name">Edouard</h4>
     <p>
       <%= review.comment %>
       <%= link_to "Delete", review_path(review), method: :delete, remote: true %>
