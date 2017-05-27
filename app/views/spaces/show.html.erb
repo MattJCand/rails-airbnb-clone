@@ -20,9 +20,6 @@
             <li>
               <%= link_to "Book", new_space_booking_path(@space), class: "btn btn-primary" %>
             </li>
-            <li>
-              <%= link_to "Back to venues", spaces_path, class: "btn btn-primary" %>
-            </li>
           </ul>
         </div>
       </div>
@@ -62,41 +59,50 @@
     </div>
   </div>
 </div>
-<hr>
 
-<!-- Form ADD Review   -->
-
-<div class="container">
-   <div class="row">
-     <div class="col-md_8">
-       <%= render 'reviews/form', space: @space, review: @review %>
-     </div>
-   </div>
- </div>
-
-<!-- Form  Review Display -->
-
-<div class="container">
+<div id="venue-description">
+  <div class="container">
     <div class="row">
-      <div class="col-md-8">
-          <div class="page-header">
-            <div id="review_count">
-              <%= render 'review_count', reviews: @space.reviews %>
-            </div>
-          </div>
-          <div class="comments-list" id="reviews">
-          <% if @space.reviews.blank? %>
-                Please write the first review for <%= @space.name %>
-          <% else %>
-            <% @space.reviews.each do |review| %>
-                <%= render 'reviews/show', review: review %>
-            <% end %>
-          <% end %>
-          </div>
-        </div>
-    </div>
-</div>
+      <div class="col-xs-12 col-sd-10 col-sm-offset-1">
+        <!-- Form ADD Review   -->
 
+        <div class="container">
+           <div class="row">
+             <div class="col-md_10">
+               <%= render 'reviews/form', space: @space, review: @review %>
+             </div>
+           </div>
+         </div>
+
+        <!-- Form  Review Display -->
+
+        <div class="container">
+            <div class="row">
+              <div class="col-md-10">
+                  <div class="page-header">
+                    <div id="review_count">
+                      <%= render 'review_count', reviews: @space.reviews %>
+                    </div>
+                  </div>
+                  <div class="comments-list" id="reviews">
+                  <% if @space.reviews.blank? %>
+                        Please write the first review for <%= @space.name %>
+                  <% else %>
+                    <% @space.reviews.each do |review| %>
+                        <%= render 'reviews/show', review: review %>
+                    <% end %>
+                  <% end %>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- JS SCRIPT -->
 
